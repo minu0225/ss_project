@@ -1,0 +1,62 @@
+*{
+    padding 0;
+    margin 0;
+}
+#wrap{
+    width:100%;
+    height:1000px;
+}
+header{
+    width:1000px;
+    height:150px;
+}
+#logo{
+    margin-top:30px;
+    height:100px;
+    width:200px;
+    float:left;
+    text-align:center;
+}
+#logo span{
+    font-size:20px;
+}
+ul{
+    float:right;
+    list-style:none;
+}
+li{
+   float:left;
+}
+
+li:after {content:"l"; margin:25px;}
+li:last-child:after{content:none}
+section{
+    width:1000px;
+    height:600px;
+    margin-top:15px;
+    background-color:#F7F7F7;
+}
+article{
+    width:200px;
+    height:550px;
+    float:left;
+    margin-top:25px;
+    margin-left:7px;
+    background-color:#BFBFBF;
+}
+article:first-child{margin-left:81px;}
+#label{
+    width:200px;
+    height:50px;
+    margin-top:450px;
+    background-color:#47DC65;
+    font-size:35px;
+    color:white;
+    text-align:right;
+}
+footer{
+    width:1000px;
+    height:300px;
+    margin-top:15px;
+    background-image:url('캡처.jpg')
+}

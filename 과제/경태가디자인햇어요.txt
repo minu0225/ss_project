@@ -1,0 +1,8 @@
+<div id="login_table">
+                <form method="post" action="ss_login.php">
+                    <input type="text" name="login_id" id="login_id" placeholder="  User"required>
+                    <input type="password" name="login_pass" id="login_pass" placeholder="  Password"required>
+                    <input type="submit" value="시작하기" id="login_submit">
+                   <input type="button" id="join" value="'blog barray'회원이 아니신가요?">
+        </form>
+        </div>
