@@ -1,4 +1,4 @@
-create table ss_1(
+﻿create table ss_1(
 id char(20) not null,
 password char(20),
 name char(10),

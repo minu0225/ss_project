@@ -1,4 +1,4 @@
-create table ss_2(
+﻿create table ss_2(
 id char(20) not null,
 name char(10),
 body text,

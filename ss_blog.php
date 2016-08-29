@@ -1,7 +1,7 @@
-<?php
+﻿<?php
     session_start();
 ?>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <?php
 
         $date = date("m월d일h시i분");

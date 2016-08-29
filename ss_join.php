@@ -1,7 +1,6 @@
-<?php
+﻿<?php
   
     include"member_database.php";
-
     $sql="select * from ss_1 where id='{$_POST['join_id']}'";
     $result=$connect->query($sql);
     $row=$result->fetch();

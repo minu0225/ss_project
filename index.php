@@ -8,12 +8,13 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
        <link type="text/css" rel="stylesheet" href="asdas1.css"/>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-       <script src="/js/app.js"></script>
+       
        <div>
        <img src="로그인or회원가입.png" class="body" >
        <p id="header1">B L O G<br>B E R R Y</p>
         </div>
        <meta charset="utf-8">
+	<title>Blog Berry</title>
     </head>
     <body>
        <div id="wrap1">
@@ -126,7 +127,7 @@
                    <input type="button" id="join" value="'blog berry'회원이 아니신가요?">
                 </form>
 
-            <form action="ss_join.php" method="post" id="test">                        
+            <form action="ss_join.php" method="post">                        
                     <p class="join2">이름</p><input type="text" name="join_name" class="join1"placeholder="  Name"><Br></Br>
                     <p class="join2">아이디</p><input type="text" name="join_id" placeholder="  ID" class="join1" required><Br></Br>
                     <p class="join2">비밀번호</p><input type="password" name="join_pass1" placeholder="  Password" class="join1" required><Br></Br>
@@ -161,6 +162,8 @@
                    
                     echo"<p class='join4'>비밀번호</p><input type='password' name='join_pass1' class='join3' value='{$row['password']}'  required><Br></Br>";
                     echo"<p class='join4'>상태메세지</p><textarea name='join_message' class='join3' id='change_textarea' placeholder='  상태메세지를 입력해주세요.'>{$row['message']}</textarea><Br></Br>";
+		    echo"<p class='join4'>생년월일</p><input type='date' name='join_date' class='join3' value='{$row['date']}' required><Br></Br>";
+		    echo"<p class='join4'>전화번호</p><input type='text' name='join_tel' class='join3' value='{$row['tel']}' required><Br></Br>";
                         ?>
                 </ul>
                 <br><input type="submit" id="join_submit"value="변경">
@@ -317,11 +320,10 @@
                                 }
 
                             echo"<div class='panel panel-info'>
-                        <div class='panel-heading blog_head'> {$row['title']}<span class='blog_num'>$num 번째글</span></div>
-                        <div class='panel-body' >
-                        <p class='blog_name'>글쓴이:  {$row['name']} <br> 날짜:  {$row['date']}</p>
+                        <div class='blog_head'> <span  class='blog_num1'>  $num 번째글   </span>{$row['title']}<span class='blog_num'>날짜:  {$row['date']}</span></div>
 
-                        <div class='blog_body'>{$row['body']}<br>";
+                        <div class='blog_body'>
+			{$row['body']}<br>";
                         $num--;
                         for($i=0; $i<3; $i++)
                         {
@@ -334,12 +336,8 @@
                                 echo"<img src='$img_name' width='$img_width'id='img1'>";
                             }
                         }
-                        echo"</div></div>";   
-                        echo"<div class='panel-footer'>
-                        <button class='btn-more btn btn-sm btn-primary'><span class='glyphicon glyphicon-chevron-down'></span>  더보기</button>
-                        <button class='btn btn-sm btn-success'><a href='ss_modified.php?count=$count' class='glyphicon glyphicon-edit' id='modified'>수정</a></button>
-                        <button class='btn btn-sm btn-danger'><a href='ss_delete.php?count=$count'class='glyphicon glyphicon-trash' id='delete'>삭제</a></button></div></div>";
-                                
+                        echo"<br><div class='mdbutton'><a href='ss_modified.php?count=$count'   class='modified'> <span class='glyphicon glyphicon-edit'>수정</span></a>
+                        <a href='ss_delete.php?count=$count'  class='delete'><span class='glyphicon glyphicon-trash'>삭제</span></a></div><div class='footer_bar'></div></div></div>";                       
                             }
                         }
                         ?>
@@ -352,7 +350,7 @@
             $(function(){
                 $('#profile_form').css('opacity','1');
                 $('.menu_img').css('opacity','1');
-                $('#login_table').css('top','-1000px');
+                $('#login_table').css('top','-100%');
                 setTimeout('blog()',250);
                 $('#header1').css('display','none');
                 $('.blog_main').css('margin-left','620');
@@ -372,7 +370,7 @@
         else{
              echo"<script>
             $(function(){
-                $('#login_table').css('margin-top','-1100px');
+                $('#login_table').css('margin-top','-42%');
                 });
             </script>";
         }
@@ -386,35 +384,35 @@
           {
              location.href="ss_passwordform.php";
           }
-            $(function(){
-                
-              $("#join").click(function(){
-                  $("#login_table").css("margin-top","-1000");
-                  
-                 
-                });
-                $("#join_back").click(function(){
-                    $("#login_table").css("margin-bottom","-450");
-                });
-              });
+            
        
           </script>
           <script>
             $(function(){
                 
               $("#join").click(function(){
-                  $(".login_table").css("margin-top","-650");
+                  $(".login_table").css("margin-top","-100%");
                   
                
                 });
                 $("#join_back").click(function(){
-                    $(".login_table").css("margin-top","750");
+                    $(".login_table").css("margin-top","130%");
                 });
                 
             
               });
+	var agt = navigator.userAgent.toLowerCase();
+
+	if (agt.indexOf("chrome") != -1) {
+
+	}
+	else{
+	alert("크롬이 아닐경우 원활한 실행이 안되요. 크롬으로 접속해주세요");
+	}
+
         </script>
           
           </div>
+	<script src="./js/app.js"></script>
     </body>
 </html>
